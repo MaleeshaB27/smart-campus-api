@@ -160,8 +160,11 @@ Q1.2 - HATEOAS and the Value of Hypermedia Links
 
 HATEOAS (Hypermedia As The Engine Of Application State) requires servers to embed navigation links in responses so clients can discover all available actions without relying on static documentation. The Discovery endpoint at GET /api/v1 demonstrates this by returning a resources map with canonical URLs for every collection. 
 Benefits over static documentation: 
-• Discoverability: A client knowing only the root URL can navigate the entire API by following embedded links. 
+
+• Discoverability: A client knowing only the root URL can navigate the entire API by following embedded links.
+
 • Evolvability: URL changes are automatically reflected in responses; hard-coded client paths do not break. 
+
 • Self-describing state: Responses can include only links valid for the current resource state, guiding clients toward legal transitions.
 
 ## Part 2 - Room Management
@@ -181,9 +184,13 @@ The @Consumes(MediaType.APPLICATION_JSON) annotation declares that the endpoint 
 Q3.2 - @QueryParam Filtering vs Path-Segment Filtering
 
 Query parameters are the correct choice for filtering collections for several reasons: 
+
 • Semantic correctness: A path segment implies a distinct, addressable resource. A filtered list is a view of the collection, not a new resource; query parameters represent this accurately. 
+
 • Composability: Multiple filters combine naturally: ?type=CO2&status=ACTIVE. Path-based filtering makes this awkward and brittle. 
+
 • Optionality: Omitting the parameter returns the full collection with no extra routing required. 
+
 • REST convention: RFC 3986 distinguishes path (resource identity) from query (operation parameters). Filtering is parametric, so it belongs in the query string.
 
 ## Part 4 - Deep Nesting with Sub-Resources
