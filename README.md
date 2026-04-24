@@ -24,6 +24,47 @@ No Spring Boot and no database technology are used.
 - `/api/v1/sensors`
 - `/api/v1/sensors/{sensorId}/readings`
 
+### Project Folder Structure
+
+smart_Campus_API/
+├─ pom.xml
+├─ README.md
+├─ src/
+│  ├─ main/
+│  │  ├─ java/
+│  │  │  └─ com/smartcampus/api/
+│  │  │     ├─ config/
+│  │  │     │  └─ SmartCampusApplication.java
+│  │  │     ├─ resource/
+│  │  │     │  ├─ DiscoveryResource.java
+│  │  │     │  ├─ RoomResource.java
+│  │  │     │  ├─ SensorResource.java
+│  │  │     │  └─ SensorReadingResource.java
+│  │  │     ├─ model/
+│  │  │     │  ├─ Room.java
+│  │  │     │  ├─ Sensor.java
+│  │  │     │  ├─ SensorReading.java
+│  │  │     │  └─ ErrorMessage.java
+│  │  │     ├─ repository/
+│  │  │     │  └─ DataStore.java
+│  │  │     ├─ exception/
+│  │  │     │  ├─ RoomNotEmptyException.java
+│  │  │     │  ├─ LinkedResourceNotFoundException.java
+│  │  │     │  ├─ SensorUnavailableException.java
+│  │  │     │  ├─ RoomNotEmptyExceptionMapper.java
+│  │  │     │  ├─ LinkedResourceNotFoundExceptionMapper.java
+│  │  │     │  ├─ SensorUnavailableExceptionMapper.java
+│  │  │     │  ├─ NotFoundExceptionMapper.java
+│  │  │     │  └─ GenericExceptionMapper.java
+│  │  │     └─ filter/
+│  │  │        └─ ApiLoggingFilter.java
+│  │  └─ webapp/
+│  │     └─ WEB-INF/
+│  │        └─ web.xml
+│  └─ test/
+└─ target/   (generated after build)
+
+
 ### Data Consistency Rules
 
 - A sensor can only be created if its `roomId` exists.
