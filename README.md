@@ -1,5 +1,9 @@
 # Smart Campus API Coursework Report (5COSC022W)
 
+**Author:** Maleesha Bandaranayake
+
+[Click here to view the full PDF Report](w2153586_20241596_CSA_Report.pdf)
+
 ## 1) API Design Overview
 
 This project implements a RESTful Smart Campus backend using only the coursework-approved stack:
