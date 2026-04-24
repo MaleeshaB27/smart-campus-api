@@ -26,6 +26,7 @@ No Spring Boot and no database technology are used.
 
 ### Project Folder Structure
 
+```text
 smart_Campus_API/
 ├─ pom.xml
 ├─ README.md
@@ -62,7 +63,8 @@ smart_Campus_API/
 │  │     └─ WEB-INF/
 │  │        └─ web.xml
 │  └─ test/
-└─ target/   (generated after build)
+└─ target/  (generated after build)
+```
 
 
 ### Data Consistency Rules
